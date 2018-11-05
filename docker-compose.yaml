@@ -1,9 +1,7 @@
 version: '3'
 services:
   server:
-    build:
-      context: .
-      dockerfile: Dockerfile.server
+    image: nokamoto13/example-ping-service-server:v0
     ports:
       - 9000:9000
   linkerd:
@@ -16,12 +14,6 @@ services:
     ports:
       - 8080:8080
       - 9990:9990
-  client:
-    build:
-      context: .
-      dockerfile: Dockerfile.client
-    depends_on:
-      - linkerd
   prom:
     image: prom/prometheus:v2.4.3
     volumes:

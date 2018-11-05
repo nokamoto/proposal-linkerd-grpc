@@ -1,11 +1,5 @@
 # proposal-linkerd-grpc
 
-## Build
-
-```bash
-./build.sh
-```
-
 ## Run
 
 ```bash
@@ -14,7 +8,8 @@ docker-compose logs -f linkerd
 ```
 
 ```bash
-docker-compose exec client client -h linkerd -p 8080
+go get -u github.com/nokamoto/example-ping-service-client
+example-ping-service-client -h localhost -p 8080
 ```
 
 | url | module |
